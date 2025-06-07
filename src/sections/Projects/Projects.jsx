@@ -1,6 +1,7 @@
 import styles from './ProjectsStyles.module.css';
 import PortfolioProject from '../../assets/PortfolioProject.png';
 import ProjectCard from '../../common/ProjectCard';
+import AwZentryProject from '../../assets/AwZentryProject';
 
 
 function Projects() {
