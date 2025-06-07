@@ -23,6 +23,7 @@ function Skills() {
             <SkillList src={checkMarkIcon} skill="REST API" />
             <SkillList src={checkMarkIcon} skill="AUTHENTICATION" />
             <SkillList src={checkMarkIcon} skill="EXPRESS" />
+            <SkillList src={checkMarkIcon} skill="GSAP" />
         </div>
     </section>
   )
