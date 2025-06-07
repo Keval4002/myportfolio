@@ -8,7 +8,8 @@ function Projects() {
     <section id='projects' className={styles.container}>
         <h1 className="sectionTitle">Projects</h1>
         <div className={styles.projectsContainer}>
-            <ProjectCard src={PortfolioProject} href="https://github.com/Keval4002" projectName="#1st Project" projectDetails="Built using React"/>
+            <ProjectCard src={PortfolioProject} href="https://kambaniportfolio.netlify.app/" projectName="#1st Project" projectDetails="Built using React"/>
+            <ProjectCard src={AwZentryProject} href="https://awzentry.netlify.app/" projectName="#2nd Project" projectDetails="Built using React and Gsap"/>
         </div>
     </section>
   )
