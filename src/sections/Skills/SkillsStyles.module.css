@@ -1,0 +1,37 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    span{
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    img{
+        width: 20px;
+
+    }
+}
+
+.SkillList{
+    display: flex;
+    justify-content: space-evenly;
+    align-self: center;
+    flex-wrap: wrap;
+    row-gap: 40px;
+    max-width: 26ch;
+}
+
+@media(width>=800px){
+    .SkillList{
+        max-width: fit-content;
+        gap: 20px;
+        padding: 0 200px;
+
+        p{
+            font-size: 20px;
+        }
+    }
+}
