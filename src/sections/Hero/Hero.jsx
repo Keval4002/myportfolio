@@ -29,7 +29,7 @@ function Hero() {
         <div className={styles.info}>
             <h1>Keval<br/>Ambani</h1>
             <h2>Full Stack Developer</h2>
-            <span><a href="https://github.com/Keval4002" target='_blank'><img src={githubIcon} alt="github icon" /></a><a href="www.linkedin.com/in/keval-ambani-9ba99532a" target='_blank'><img src={linkedinIcon} alt="linkedin icon" /></a></span>
+            <span><a href="https://github.com/Keval4002" target='_blank'><img src={githubIcon} alt="github icon" /></a><a href="https://www.linkedin.com/in/keval-ambani-9ba99532a" target='_blank'><img src={linkedinIcon} alt="linkedin icon" /></a></span>
             <p className={styles.description}>Hey, I’m Keval Ambani – a Computer Engineering student who codes, breaks things, and fixes them (usually). I’m on a mission to make tech less terrible, one full-stack project at a time.</p>
             <a href={CV}  download>
                 <button className="hover" >Resume</button>
