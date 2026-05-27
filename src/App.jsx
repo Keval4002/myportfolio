@@ -1,29 +1,19 @@
+import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import About from './components/About'
-import Experience from './components/Experience'
-import Projects from './components/Projects'
-import Contact from './components/Contact'
+import Home from './pages/Home'
+import Freelance from './pages/Freelance'
+import ContactPage from './pages/ContactPage'
 
 function App() {
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300 font-rubik">
+    <div className="min-h-screen bg-neu-white text-neu-black font-space selection:bg-neu-yellow selection:text-neu-black">
       <Navbar />
       
-      {/* Hero Section */}
-      <Hero />
-      
-      {/* About Section */}
-      <About />
-      
-      {/* Experience Section */}
-      <Experience />
-      
-      {/* Projects Section */}
-      <Projects />
-      
-      {/* Contact Section & Footer */}
-      <Contact />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/freelance" element={<Freelance />} />
+        <Route path="/contact" element={<ContactPage />} />
+      </Routes>
     </div>
   )
 }

@@ -1,9 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Rubik:ital,wght@0,300..900;1,300..900&family=Space+Grotesk:wght@300..700&display=swap');
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-@theme{
-    --font-roboto: 'Roboto Mono', serif;
-    --font-rubik: 'Rubik', serif;
+@theme {
+    --font-roboto: 'Roboto Mono', monospace;
+    --font-rubik: 'Rubik', sans-serif;
+    --font-space: 'Space Grotesk', sans-serif;
+    
+    --color-neu-blue: #3b82f6;
+    --color-neu-black: #111111;
+    --color-neu-brown: #d97757;
+    --color-neu-yellow: #fef08a; /* Softer pastel yellow */
+    --color-neu-white: #fafafa;
+    
+    --shadow-neu: 2px 2px 0px 0px rgba(17, 17, 17, 1);
+    --shadow-neu-hover: 4px 4px 0px 0px rgba(17, 17, 17, 1);
+    --shadow-neu-active: 1px 1px 0px 0px rgba(17, 17, 17, 1);
 }
+
+@utility no-scrollbar {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

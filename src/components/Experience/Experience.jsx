@@ -1,75 +1,74 @@
-import ExperienceCard from './ExperienceCard';
-import SectionHeader from '../common/SectionHeader';
-
 const Experience = () => {
   const experiences = [
     {
       id: 1,
       company: "Tauris Media",
       position: "Frontend Developer",
-      duration: "November 2025 – January 2026",
-      description: "Built high-end portfolio website using React and Framer Motion to strengthen brand presence and drive client outreach. Engineered complex animation systems with layered image stacking, scroll-driven transitions, and narrative-based motion flows. Implemented session-aware media caching to reduce load times and enable seamless navigation for returning users.",
-      skills: ["React", "Framer Motion", "Animation Systems", "Performance Optimization", "Media Caching", "Responsive Design", "Scroll Animations"]
+      duration: "Nov 2025 – Jan 2026",
+      description: "Built high-end portfolio website using React and Framer Motion to strengthen brand presence and drive client outreach. Engineered complex animation systems with layered image stacking, scroll-driven transitions, and narrative-based motion flows.",
+      skills: ["React", "Framer Motion", "Animation Systems", "Performance Optimization"],
     },
     {
       id: 2,
       company: "Glass Factory",
-      position: "Freelance Software Developer (Frontend)",
-      duration: "September 2025 – October 2025",
-      description: "Led complete front-end restructuring and redevelopment using Next.js with focus on scalable architecture. Designed and implemented a Tariff Calculator for estimating international import costs into the U.S. with intuitive UI. Enhanced user experience through performance optimization and responsive engineering.",
-      skills: ["Next.js", "Frontend Architecture", "UI/UX Design", "Performance Optimization", "Responsive Design", "Stakeholder Collaboration"]
+      position: "Freelance Software Developer",
+      duration: "Sep 2025 – Oct 2025",
+      description: "Led complete front-end restructuring and redevelopment using Next.js with focus on scalable architecture. Designed and implemented a Tariff Calculator for estimating international import costs into the U.S.",
+      skills: ["Next.js", "Frontend Architecture", "UI/UX Design"],
     },
     {
       id: 3,
       company: "Neural Network Labs",
       position: "Full Stack Intern",
-      duration: "June 2025 – August 2025",
-      description: "Enhanced AI-powered presentation generation platform, migrating core builder from React to Next.js for improved performance and SEO. Integrated Konva.js for advanced slide editing, automated exports with Puppeteer & LibreOffice, and implemented dynamic themes. Collaborated on agentic AI solutions using Pollination.ai and Google Gemini API.",
-      skills: ["Next.js", "React", "Node.js", "Konva.js", "Puppeteer", "REST API", "AI Integration", "LibreOffice"]
+      duration: "Jun 2025 – Aug 2025",
+      description: "Migrated core builder from React to Next.js. Integrated Konva.js for advanced slide editing, automated exports with Puppeteer & LibreOffice, and collaborated on agentic AI solutions.",
+      skills: ["Next.js", "Node.js", "Konva.js", "Puppeteer", "AI Integration"],
     }
   ];
 
   return (
-    <section id="experience" className="min-h-screen py-20 px-4 bg-gray-50 dark:bg-gray-900 relative overflow-hidden">
-
-      <div className="max-w-6xl mx-auto relative z-10">
-        {/* Header */}
-        <div className="mb-16">
-          <SectionHeader 
-            title="Experience" 
-            subtitle="My professional journey and key accomplishments" 
-          />
-        </div>
-
-        {/* Timeline */}
-        <div className="relative">
-          {/* Vertical Lines on both sides */}
-          <div className="absolute left-4 md:left-8 h-full w-0.5 bg-gray-300 dark:bg-gray-700" style={{ zIndex: 0 }}></div>
-          <div className="absolute right-4 md:right-8 h-full w-0.5 bg-gray-300 dark:bg-gray-700" style={{ zIndex: 0 }}></div>
-
-          {/* Experience Cards */}
-          {experiences.map((exp, index) => (
-            <ExperienceCard 
-              key={exp.id} 
-              experience={exp} 
-              index={index} 
-            />
-          ))}
-        </div>
+    <section id="experience" className="min-h-[80vh] py-20 scroll-mt-24">
+      <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 border-b-2 border-neu-black pb-4">
+        <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tight">
+          Experience
+        </h2>
+        <span className="text-lg font-bold text-gray-500 uppercase tracking-widest mt-4 md:mt-0">
+          My Journey
+        </span>
       </div>
 
-      <style jsx>{`
-        @keyframes fadeInScale {
-          from {
-            opacity: 0;
-            transform: scale(0.9);
-          }
-          to {
-            opacity: 1;
-            transform: scale(1);
-          }
-        }
-      `}</style>
+      <div className="flex flex-col gap-12">
+        {experiences.map((exp, index) => (
+          <div key={exp.id} className="group grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            
+            {/* Left Side: Duration & Company */}
+            <div className="lg:col-span-3 flex flex-col pt-1">
+              <span className="text-sm font-bold font-roboto bg-neu-yellow px-2 py-1 border-2 border-neu-black inline-block w-max mb-3">
+                {exp.duration}
+              </span>
+              <h3 className="text-2xl font-black uppercase group-hover:text-neu-blue transition-colors">{exp.company}</h3>
+            </div>
+
+            {/* Right Side: Details */}
+            <div className="lg:col-span-9 bg-white border-2 border-neu-black p-6 shadow-neu transition-all">
+              <h4 className="text-xl font-bold uppercase mb-4 border-b-2 border-neu-black pb-2 inline-block">
+                {exp.position}
+              </h4>
+              <p className="text-lg font-medium font-roboto text-gray-800 leading-relaxed mb-6">
+                {exp.description}
+              </p>
+              <div className="flex flex-wrap gap-2 mt-4">
+                {exp.skills.map((skill, idx) => (
+                  <span key={idx} className="bg-gray-100 border border-neu-black px-3 py-1 font-bold text-xs uppercase text-gray-700">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+            
+          </div>
+        ))}
+      </div>
     </section>
   );
 };

@@ -1,40 +1,39 @@
 export const projectsData = [
   {
     id: 1,
-    title: "PresGen — AI Presentation Builder",
-    year: "2025",
-    description: "Built a fully automated AI-powered platform to generate, style, and edit presentations in minutes. Developed a modular slide rendering engine with Konva.js for real-time editing. Integrated AI agents for content/design suggestions and optimized Next.js caching for scalability.",
-    image: "../../../public/images/projectFlows/PresGen_flow.png",
+    title: "Gullak AI — Personal Finance Manager",
+    year: "2026",
+    description: "Mastered OCR receipt scans, Excel imports, and bank statement analysis with proactive financial insights; optimized inter-layer communication for sub-10ms latency. Automated analytics pipelines processing 10k+ transactions via bulk imports. RAG-based NLP financial querying reduced manual expense tracking by 70%. Transformed passive usage to actionable financial guidance through save-or-spend recommendations.",
+    image: "/images/gullak.png",
     techStack: [
       "Next.js",
-      "Node.js",
-      "Express",
-      "Tailwind CSS",
-      "Konva.js",
-      "AI Agents",
-      "JavaScript",
-      "REST APIs"
+      "Python",
+      "FastAPI",
+      "PostgreSQL",
+      "RAG",
+      "NLP",
+      "OCR"
     ],
     liveUrl: "",
     githubUrl: ""
   },
   {
     id: 2,
-    title: "Text-to-SQL Query Platform",
+    title: "PrepSetGo — Resume Editor",
     year: "2025",
-    description: "Developed a platform enabling non-technical users to query databases using plain English. Features include AI-powered SQL generation via Azure OpenAI, admin-managed schemas with JWT authentication, and comprehensive query logging for safety and audit. Includes session management, query history, and feedback loop for continuous AI improvement. Built with FastAPI backend and React frontend.",
-    image: "../../../public/images/projectFlows/sql_bot_flow.png",
+    description: "AI-enabled resume editing platform leveraging semantic similarity, LLM-based optimization, and ATS keyword analysis to tailor resumes against job descriptions, improving alignment scores by 65%. Developed scalable resume parsing workflows supporting PDF/DOCX uploads and drafts exports with sub-2s latency. Integrated embedding-based vector retrieval and configurable AI provider support across OpenAI and Gemini APIs.",
+    image: "/images/prepsetgo.png",
     techStack: [
-      "FastAPI",
       "React",
-      "Azure OpenAI",
-      "PostgreSQL",
-      "JWT Auth",
-      "Python",
-      "REST APIs",
-      "Vercel"
+      "Node.js",
+      "Express.js",
+      "OpenAI API",
+      "Gemini API",
+      "MongoDB",
+      "Vector DB"
     ],
     liveUrl: "",
     githubUrl: ""
   }
 ];
+

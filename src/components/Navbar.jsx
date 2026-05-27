@@ -1,191 +1,128 @@
-import { useTheme } from '../context/ThemeContext';
-import { useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import { HiMenu, HiX } from 'react-icons/hi';
+import { Howl, Howler } from 'howler';
+import { FaVolumeUp, FaVolumeMute } from 'react-icons/fa';
 
 const Navbar = () => {
-  const { isDark, toggleTheme } = useTheme();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMuted, setIsMuted] = useState(false);
+  const [howlInstance, setHowlInstance] = useState(null);
+  const location = useLocation();
+  const navigate = useNavigate();
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+  // Initialize Audio
+  useEffect(() => {
+    const sound = new Howl({
+      src: ['/audio/intro.mp3'],
+      html5: true, // Forces HTML5 Audio
+      autoplay: true, // Try to play automatically
+      loop: false,
+      onplay: () => setIsMuted(false),
+      onend: () => {
+         // Optionally you can reset or keep it muted when done
+         // Keeping it as is so user can hit play again to relisten
+      }
+    });
+    
+    setHowlInstance(sound);
+
+    return () => {
+      sound.unload();
+    };
+  }, []);
+
+  const toggleMute = () => {
+    if (!howlInstance) return;
+
+    if (isMuted) {
+      // If it was muted, unmute it, and restart if it's not currently playing
+      Howler.mute(false);
+      setIsMuted(false);
+      if (!howlInstance.playing()) {
+         howlInstance.play();
+      }
+    } else {
+      // Mute global howler
+      Howler.mute(true);
+      setIsMuted(true);
+    }
+  };
+
+  const handleNavClick = (hash) => {
+    setIsMenuOpen(false);
+    if (location.pathname !== '/') {
+      navigate('/');
+      setTimeout(() => {
+        document.getElementById(hash)?.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    } else {
+      document.getElementById(hash)?.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white dark:bg-gray-900 shadow-md transition-colors duration-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-neu-yellow border-b-4 border-neu-black shadow-[0_4px_0_0_rgba(17,17,17,1)] transition-colors duration-300 h-20 flex items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 w-full">
+        <div className="flex justify-between items-center h-full">
           {/* Logo */}
-          <div className="flex-shrink-0">
-            <svg 
-              className="h-10 w-10"
-              viewBox="0 0 100 100" 
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <circle cx="50" cy="50" r="48" fill="#1a1a1a" className="dark:fill-white" />
-              
-              <g fill="none" stroke="#fff" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" className="dark:stroke-gray-900">
-                <line x1="17" y1="25" x2="17" y2="75" />
-                <line x1="39" y1="25" x2="17" y2="50" />
-                <polyline points="17,50 39,75 61,25 83,75" />
-                <line x1="50" y1="50" x2="72" y2="50" />
-              </g>
-            </svg>
-          </div>
+          <Link to="/" className="text-3xl font-black uppercase tracking-tighter hover:scale-105 transition-transform bg-white px-2 py-1 border-4 border-neu-black shadow-neu flex items-center gap-4">
+            PORTFOLIO
+          </Link>
 
-          {/* Desktop Navigation Links */}
-          <div className="hidden sm:flex items-center space-x-8">
-            <a
-              href="#about"
-              className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200 font-medium"
-            >
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-6 font-bold text-lg uppercase">
+            <button onClick={() => handleNavClick('about')} className="hover:-translate-y-1 hover:shadow-neu transition-all bg-neu-white px-3 py-1 border-4 border-transparent hover:border-neu-black">
               About
-            </a>
-            <a
-              href="#experience"
-              className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200 font-medium"
-            >
+            </button>
+            <button onClick={() => handleNavClick('experience')} className="hover:-translate-y-1 hover:shadow-neu transition-all bg-neu-white px-3 py-1 border-4 border-transparent hover:border-neu-black">
               Experience
-            </a>
-            <a
-              href="#projects"
-              className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200 font-medium"
-            >
+            </button>
+            <button onClick={() => handleNavClick('projects')} className="hover:-translate-y-1 hover:shadow-neu transition-all bg-neu-white px-3 py-1 border-4 border-transparent hover:border-neu-black">
               Projects
-            </a>
-            <a
-              href="#contact"
-              className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200 font-medium"
-            >
+            </button>
+            <Link to="/freelance" className="hover:-translate-y-1 hover:shadow-neu transition-all bg-neu-blue text-white px-3 py-1 border-4 border-neu-black shadow-neu">
+              Freelance
+            </Link>
+            <Link to="/contact" className="hover:-translate-y-1 hover:shadow-neu transition-all bg-neu-brown text-white px-3 py-1 border-4 border-neu-black shadow-neu">
               Contact
-            </a>
-
-            {/* Theme Toggle */}
-            <button
-              onClick={toggleTheme}
-              className="p-2 rounded-lg bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-200"
-              aria-label="Toggle theme"
+            </Link>
+            
+            {/* Audio Toggle */}
+            <button 
+              onClick={toggleMute}
+              className={`p-2 border-2 border-neu-black rounded-full shadow-neu transition-all hover:scale-110 ${!isMuted ? 'bg-neu-blue text-white' : 'bg-neu-black text-white'}`}
+              title={isMuted ? "Unmute Intro" : "Mute Intro"}
             >
-              {isDark ? (
-                // Sun icon
-                <svg
-                  className="h-5 w-5 text-yellow-500"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
-                  />
-                </svg>
-              ) : (
-                // Moon icon
-                <svg
-                  className="h-5 w-5 text-gray-700"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
-                  />
-                </svg>
-              )}
+              {!isMuted ? <FaVolumeUp size={18} /> : <FaVolumeMute size={18} />}
             </button>
           </div>
 
-          {/* Mobile menu button */}
-          <div className="sm:hidden flex items-center gap-2">
-            {/* Theme Toggle for Mobile */}
-            <button
-              onClick={toggleTheme}
-              className="p-2 rounded-lg bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-200"
-              aria-label="Toggle theme"
+          {/* Mobile menu button and Audio Toggle */}
+          <div className="md:hidden flex items-center gap-4">
+            <button 
+              onClick={toggleMute}
+              className={`p-2 border-2 border-neu-black rounded-full shadow-neu transition-all ${!isMuted ? 'bg-neu-blue text-white' : 'bg-neu-black text-white'}`}
             >
-              {isDark ? (
-                <svg
-                  className="h-5 w-5 text-yellow-500"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
-                  />
-                </svg>
-              ) : (
-                <svg
-                  className="h-5 w-5 text-gray-700"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
-                  />
-                </svg>
-              )}
+              {!isMuted ? <FaVolumeUp size={18} /> : <FaVolumeMute size={18} />}
             </button>
-
-            {/* Hamburger Button */}
             <button
-              onClick={toggleMenu}
-              className="p-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200"
-              aria-label="Toggle menu"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="p-2 border-4 border-neu-black bg-white shadow-neu hover:shadow-neu-hover transition-all"
             >
-              {isMenuOpen ? (
-                <HiX className="h-6 w-6" />
-              ) : (
-                <HiMenu className="h-6 w-6" />
-              )}
+              {isMenuOpen ? <HiX className="h-6 w-6" /> : <HiMenu className="h-6 w-6" />}
             </button>
           </div>
         </div>
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="sm:hidden pb-4">
-            <div className="flex flex-col space-y-3">
-              <a
-                href="#about"
-                onClick={() => setIsMenuOpen(false)}
-                className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200 font-medium px-2 py-2"
-              >
-                About
-              </a>
-              <a
-                href="#experience"
-                onClick={() => setIsMenuOpen(false)}
-                className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200 font-medium px-2 py-2"
-              >
-                Experience
-              </a>
-              <a
-                href="#projects"
-                onClick={() => setIsMenuOpen(false)}
-                className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200 font-medium px-2 py-2"
-              >
-                Projects
-              </a>
-              <a
-                href="#contact"
-                onClick={() => setIsMenuOpen(false)}
-                className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200 font-medium px-2 py-2"
-              >
-                Contact
-              </a>
-            </div>
+          <div className="md:hidden absolute top-20 left-0 right-0 bg-neu-white border-b-4 border-neu-black shadow-neu flex flex-col p-4 space-y-4 font-bold text-xl uppercase z-40">
+            <button onClick={() => handleNavClick('about')} className="text-left w-full border-b-2 border-neu-black pb-2">About</button>
+            <button onClick={() => handleNavClick('experience')} className="text-left w-full border-b-2 border-neu-black pb-2">Experience</button>
+            <button onClick={() => handleNavClick('projects')} className="text-left w-full border-b-2 border-neu-black pb-2">Projects</button>
+            <Link to="/freelance" onClick={() => setIsMenuOpen(false)} className="bg-neu-blue text-white border-4 border-neu-black p-2 text-center shadow-neu">Freelance</Link>
+            <Link to="/contact" onClick={() => setIsMenuOpen(false)} className="bg-neu-brown text-white border-4 border-neu-black p-2 text-center shadow-neu">Contact</Link>
           </div>
         )}
       </div>
