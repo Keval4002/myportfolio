@@ -28,8 +28,10 @@ const Freelance = () => {
       {/* Clients Worked With */}
       <section className="mb-20">
         <h2 className="text-2xl font-bold mb-8 uppercase tracking-widest text-gray-500 text-center">Clients</h2>
-        <div className="bg-white border-2 border-neu-black p-12 text-center shadow-neu">
-          <p className="text-xl font-bold italic opacity-40">[ Client Logos Placeholder ]</p>
+        <div className="bg-white border-2 border-neu-black p-12 shadow-neu flex flex-wrap justify-center items-center gap-12">
+          <img src="/images/flogo1.png" alt="Client Logo 1" className="h-16 md:h-20 object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" />
+          <img src="/images/flogo2.png" alt="Client Logo 2" className="h-16 md:h-20 object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" />
+          <img src="/images/flogo3.png" alt="Client Logo 3" className="h-16 md:h-20 object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" />
         </div>
       </section>
 
@@ -52,7 +54,7 @@ const Freelance = () => {
       <section className="flex flex-col items-center">
         <h2 className="text-2xl font-bold mb-8 uppercase tracking-widest text-gray-500 text-center">Get a Quote</h2>
         <form 
-          action="mailto:your-email@example.com" 
+          action="mailto:ambanikeval2@gmail.com" 
           method="POST" 
           encType="text/plain"
           className="bg-white border-2 border-neu-black p-8 shadow-neu max-w-2xl w-full"

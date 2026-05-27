@@ -14,7 +14,7 @@ const ContactPage = () => {
       </p>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-        <a href="mailto:your-email@example.com" className="bg-white border-4 border-neu-black p-8 shadow-neu hover:shadow-neu-hover hover:-translate-y-1 transition-all group flex items-center justify-between">
+        <a href="mailto:ambanikeval2@gmail.com" className="bg-white border-4 border-neu-black p-8 shadow-neu hover:shadow-neu-hover hover:-translate-y-1 transition-all group flex items-center justify-between">
           <div>
             <h3 className="text-3xl font-black uppercase mb-2">Email</h3>
             <p className="font-bold font-roboto">Mail me directly</p>
@@ -22,7 +22,7 @@ const ContactPage = () => {
           <FaEnvelope className="text-5xl text-neu-brown group-hover:scale-110 transition-transform" />
         </a>
 
-        <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noreferrer" className="bg-neu-blue text-white border-4 border-neu-black p-8 shadow-neu hover:shadow-neu-hover hover:-translate-y-1 transition-all group flex items-center justify-between">
+        <a href="https://www.linkedin.com/in/keval-ambani-9ba99532a" target="_blank" rel="noreferrer" className="bg-neu-blue text-white border-4 border-neu-black p-8 shadow-neu hover:shadow-neu-hover hover:-translate-y-1 transition-all group flex items-center justify-between">
           <div>
             <h3 className="text-3xl font-black uppercase mb-2">LinkedIn</h3>
             <p className="font-bold font-roboto">Professional network</p>
@@ -30,7 +30,7 @@ const ContactPage = () => {
           <FaLinkedin className="text-5xl group-hover:scale-110 transition-transform" />
         </a>
 
-        <a href="https://github.com/yourusername" target="_blank" rel="noreferrer" className="bg-neu-black text-white border-4 border-neu-black p-8 shadow-neu hover:shadow-neu-hover hover:-translate-y-1 transition-all group flex items-center justify-between">
+        <a href="https://github.com/Keval4002" target="_blank" rel="noreferrer" className="bg-neu-black text-white border-4 border-neu-black p-8 shadow-neu hover:shadow-neu-hover hover:-translate-y-1 transition-all group flex items-center justify-between">
           <div>
             <h3 className="text-3xl font-black uppercase mb-2">GitHub</h3>
             <p className="font-bold font-roboto">Check my code</p>
@@ -38,7 +38,7 @@ const ContactPage = () => {
           <FaGithub className="text-5xl group-hover:scale-110 transition-transform" />
         </a>
 
-        <a href="https://twitter.com/yourhandle" target="_blank" rel="noreferrer" className="bg-neu-yellow border-4 border-neu-black p-8 shadow-neu hover:shadow-neu-hover hover:-translate-y-1 transition-all group flex items-center justify-between">
+        <a href="https://x.com/@ambanikeval2" target="_blank" rel="noreferrer" className="bg-neu-yellow border-4 border-neu-black p-8 shadow-neu hover:shadow-neu-hover hover:-translate-y-1 transition-all group flex items-center justify-between">
           <div>
             <h3 className="text-3xl font-black uppercase mb-2">Twitter</h3>
             <p className="font-bold font-roboto">Thoughts & drops</p>

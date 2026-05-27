@@ -1,6 +1,14 @@
 const Experience = () => {
   const experiences = [
     {
+      id: 0,
+      company: "PBNIFC",
+      position: "Freelance Software Developer",
+      duration: "Mar 2026 – Apr 2026",
+      description: "Developed a comprehensive restaurant display website featuring dynamic menu displays, an integrated booking system, mail and SMS integrations, and Role-Based Access Control (RBAC).",
+      skills: ["Full Stack Development", "RBAC", "Mail & SMS APIs", "Booking Systems"],
+    },
+    {
       id: 1,
       company: "Tauris Media",
       position: "Frontend Developer",

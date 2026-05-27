@@ -32,7 +32,7 @@ const About = () => {
         <div className="relative max-w-sm md:max-w-md mx-auto md:ml-auto w-full">
           <div className="aspect-square bg-neu-brown border-2 border-neu-black shadow-neu relative overflow-hidden group">
              {/* Replace this with an actual img tag if needed */}
-             <img src="/images/about-img.jpeg" alt="Keval" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
+             <img src="/images/about-img.jpeg" alt="Keval" className="w-full h-full object-cover transition-all duration-500" />
              <div className="absolute inset-0 bg-neu-blue opacity-10 mix-blend-multiply group-hover:opacity-0 transition-opacity"></div>
           </div>
           {/* Decorative shapes */}

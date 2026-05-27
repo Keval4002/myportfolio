@@ -18,12 +18,12 @@ const Projects = () => {
           <div key={project.id} className="flex flex-col lg:flex-row gap-10 items-center group">
             
             {/* Minimalist Image Block */}
-            <div className={`w-full lg:w-1/2 bg-white border-2 border-neu-black p-4 shadow-neu ${index % 2 !== 0 ? 'lg:order-2' : ''}`}>
-              <div className="overflow-hidden border-2 border-neu-black bg-neu-white">
+            <div className={`w-full lg:w-1/2 bg-white border-2 border-neu-black p-4 shadow-neu flex items-center justify-center ${index % 2 !== 0 ? 'lg:order-2' : ''}`}>
+              <div className="overflow-hidden border-2 border-neu-black bg-neu-white w-full">
                 <img 
                   src={project.image} 
                   alt={project.title}
-                  className="w-full h-[350px] object-cover mix-blend-multiply group-hover:scale-105 transition-transform duration-700"
+                  className="w-full h-[350px] object-contain transition-transform duration-700 hover:scale-105"
                 />
               </div>
             </div>
@@ -51,15 +51,15 @@ const Projects = () => {
 
                 {/* Links */}
                 <div className={`flex gap-4 ${index % 2 !== 0 ? 'lg:justify-end' : 'justify-start'}`}>
-                  {(project.liveUrl || project.githubUrl === "") && (
-                    <button className="bg-neu-black text-white px-4 py-2 border-2 border-neu-black font-bold uppercase hover:bg-white hover:text-neu-black transition-colors flex items-center justify-center gap-2 text-sm">
+                  {project.liveUrl && (
+                    <a href={project.liveUrl} target="_blank" rel="noreferrer" className="bg-neu-black text-white px-4 py-2 border-2 border-neu-black font-bold uppercase hover:bg-white hover:text-neu-black transition-colors flex items-center justify-center gap-2 text-sm">
                       <FaExternalLinkAlt /> View Live
-                    </button>
+                    </a>
                   )}
-                  {(project.githubUrl || project.liveUrl === "") && (
-                    <button className="bg-white text-neu-black px-4 py-2 border-2 border-neu-black font-bold uppercase hover:bg-neu-black hover:text-white transition-colors flex items-center justify-center gap-2 text-sm">
+                  {project.githubUrl && (
+                    <a href={project.githubUrl} target="_blank" rel="noreferrer" className="bg-white text-neu-black px-4 py-2 border-2 border-neu-black font-bold uppercase hover:bg-neu-black hover:text-white transition-colors flex items-center justify-center gap-2 text-sm">
                       <FaGithub /> Source
-                    </button>
+                    </a>
                   )}
                 </div>
               </div>

@@ -13,21 +13,42 @@ const Navbar = () => {
 
   // Initialize Audio
   useEffect(() => {
+    let hasInteracted = false;
+
     const sound = new Howl({
       src: ['/audio/intro.mp3'],
-      html5: true, // Forces HTML5 Audio
-      autoplay: true, // Try to play automatically
-      loop: false,
-      onplay: () => setIsMuted(false),
-      onend: () => {
-         // Optionally you can reset or keep it muted when done
-         // Keeping it as is so user can hit play again to relisten
-      }
+      html5: true,
+      onplay: () => setIsMuted(false)
     });
     
     setHowlInstance(sound);
 
+    // Try to play immediately (browsers often block this)
+    sound.play();
+
+    // Fallback: Play on very first interaction
+    const playOnFirstInteraction = () => {
+      if (!hasInteracted && !sound.playing()) {
+        sound.play();
+        hasInteracted = true;
+      }
+      
+      document.removeEventListener('click', playOnFirstInteraction);
+      document.removeEventListener('touchstart', playOnFirstInteraction);
+      document.removeEventListener('scroll', playOnFirstInteraction);
+      document.removeEventListener('keydown', playOnFirstInteraction);
+    };
+
+    document.addEventListener('click', playOnFirstInteraction);
+    document.addEventListener('touchstart', playOnFirstInteraction);
+    document.addEventListener('scroll', playOnFirstInteraction, { once: true });
+    document.addEventListener('keydown', playOnFirstInteraction);
+
     return () => {
+      document.removeEventListener('click', playOnFirstInteraction);
+      document.removeEventListener('touchstart', playOnFirstInteraction);
+      document.removeEventListener('scroll', playOnFirstInteraction);
+      document.removeEventListener('keydown', playOnFirstInteraction);
       sound.unload();
     };
   }, []);
