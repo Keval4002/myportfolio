@@ -5,6 +5,22 @@ const Freelance = () => {
         Freelance Services
       </h1>
       
+      {/* Demo Videos */}
+      <section className="mb-20">
+        <h2 className="text-2xl font-bold mb-8 uppercase tracking-widest text-gray-500 text-center">Demos</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="aspect-video bg-gray-100 border-2 border-neu-black flex items-center justify-center relative overflow-hidden shadow-neu">
+             <video src="/videos/taurismedia.mp4" controls autoPlay loop muted playsInline preload="auto" className="w-full h-full object-cover z-10" />
+          </div>
+          <div className="aspect-video bg-gray-100 border-2 border-neu-black flex items-center justify-center relative overflow-hidden shadow-neu">
+             <video src="/videos/pbnifc.mp4" controls autoPlay loop muted playsInline preload="auto" className="w-full h-full object-cover z-10" />
+          </div>
+          <div className="aspect-video bg-gray-100 border-2 border-neu-black flex items-center justify-center relative overflow-hidden shadow-neu">
+             <video src="/videos/glassfactory.mp4" controls autoPlay loop muted playsInline preload="auto" className="w-full h-full object-cover z-10" />
+          </div>
+        </div>
+      </section>
+
       {/* Services List - Muted and Minimalistic */}
       <section className="mb-20">
         <h2 className="text-2xl font-bold mb-8 uppercase tracking-widest text-gray-500 text-center">What I Do</h2>
@@ -29,24 +45,15 @@ const Freelance = () => {
       <section className="mb-20">
         <h2 className="text-2xl font-bold mb-8 uppercase tracking-widest text-gray-500 text-center">Clients</h2>
         <div className="bg-white border-2 border-neu-black p-12 shadow-neu flex flex-wrap justify-center items-center gap-12">
-          <img src="/images/flogo1.png" alt="Client Logo 1" className="h-16 md:h-20 object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" />
-          <img src="/images/flogo2.png" alt="Client Logo 2" className="h-16 md:h-20 object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" />
-          <img src="/images/flogo3.png" alt="Client Logo 3" className="h-16 md:h-20 object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" />
-        </div>
-      </section>
-
-      {/* Demo Videos */}
-      <section className="mb-20">
-        <h2 className="text-2xl font-bold mb-8 uppercase tracking-widest text-gray-500 text-center">Demos</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="aspect-video bg-gray-100 border-2 border-neu-black flex items-center justify-center relative overflow-hidden shadow-neu">
-             <p className="text-gray-400 text-xl font-bold z-10">[ Video Placeholder ]</p>
-             <div className="absolute inset-0 opacity-10 bg-[repeating-linear-gradient(45deg,transparent,transparent_10px,#000_10px,#000_20px)]"></div>
-          </div>
-          <div className="aspect-video bg-gray-100 border-2 border-neu-black flex items-center justify-center relative overflow-hidden shadow-neu">
-             <p className="text-gray-400 text-xl font-bold z-10">[ Video Placeholder ]</p>
-             <div className="absolute inset-0 opacity-10 bg-[repeating-linear-gradient(45deg,transparent,transparent_10px,#000_10px,#000_20px)]"></div>
-          </div>
+          <a href="https://www.pbnifc.com/" target="_blank" rel="noopener noreferrer">
+            <img src="/images/flogo1.png" alt="PBN IFC Logo" className="h-16 md:h-20 object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" />
+          </a>
+          <a href="https://www.glassfactory.info/" target="_blank" rel="noopener noreferrer">
+            <img src="/images/flogo2.png" alt="Glass Factory Logo" className="h-16 md:h-20 object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" />
+          </a>
+          <a href="https://taurismedia.com/" target="_blank" rel="noopener noreferrer">
+            <img src="/images/flogo3.png" alt="Tauris Media Logo" className="h-16 md:h-20 object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" />
+          </a>
         </div>
       </section>
 
