@@ -3,15 +3,16 @@ import { FaEnvelope, FaLinkedin, FaGithub, FaTwitter, FaFilePdf } from 'react-ic
 const ContactPage = () => {
   return (
     <main className="pt-24 px-4 sm:px-8 max-w-5xl mx-auto min-h-screen pb-24 flex flex-col justify-center">
-      <h1 className="text-5xl md:text-8xl font-black mb-12 uppercase">
-        <span className="bg-neu-yellow px-4 border-4 border-neu-black shadow-neu inline-block -rotate-2">Let's</span>
-        <br />
-        <span className="bg-neu-blue text-white px-4 border-4 border-neu-black shadow-neu inline-block mt-4 rotate-2">Talk.</span>
-      </h1>
-      
-      <p className="text-2xl font-bold mb-12 max-w-2xl border-l-8 border-neu-brown pl-6">
-        Ready to build what makes you impossible to ignore? Drop a message or connect on socials.
-      </p>
+      <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 mb-12">
+        <h1 className="text-5xl md:text-8xl font-black uppercase flex flex-col sm:flex-row gap-4">
+          <span className="bg-neu-yellow px-4 border-4 border-neu-black shadow-neu inline-block -rotate-2">Let's</span>
+          <span className="bg-neu-blue text-white px-4 border-4 border-neu-black shadow-neu inline-block rotate-2">Talk.</span>
+        </h1>
+        
+        <p className="text-2xl font-bold max-w-md border-l-8 border-neu-brown pl-6">
+          Ready to build what makes you impossible to ignore? Drop a message or connect on socials.
+        </p>
+      </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
         <a href="mailto:ambanikeval2@gmail.com" className="bg-white border-4 border-neu-black p-8 shadow-neu hover:shadow-neu-hover hover:-translate-y-1 transition-all group flex items-center justify-between">

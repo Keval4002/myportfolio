@@ -71,14 +71,35 @@ const Freelance = () => {
 
   return (
     <main className="pt-24 px-4 sm:px-8 max-w-7xl mx-auto min-h-screen pb-24">
-      <h1 className="text-5xl md:text-7xl font-black mb-12 uppercase border-b-2 border-neu-black pb-4 text-center">
-        Freelance Services
-      </h1>
+      <div className="mb-12 border-b-4 border-neu-black pb-8 text-center flex flex-wrap justify-center items-center gap-4 sm:gap-6">
+        <span className="text-4xl md:text-6xl font-black uppercase tracking-tighter bg-neu-brown text-white px-5 py-2 border-4 border-neu-black shadow-neu inline-block -rotate-1">
+          Ktech
+        </span>
+        <span className="text-2xl md:text-4xl font-black uppercase tracking-tight bg-white text-neu-black px-5 py-2 border-4 border-neu-black shadow-neu inline-block rotate-1">
+          Freelance Services
+        </span>
+      </div>
       
+      {/* Clients Worked With */}
+      <section className="mb-10">
+        <h2 className="text-xl font-bold mb-4 uppercase tracking-widest text-gray-500 text-center">Clients</h2>
+        <div className="bg-white border-2 border-neu-black p-6 shadow-neu flex flex-wrap justify-center items-center gap-8">
+          <a href="https://www.pbnifc.com/" target="_blank" rel="noopener noreferrer">
+            <img src="/images/flogo1.png" alt="PBN IFC Logo" className="h-12 md:h-16 object-contain transition-all hover:scale-105" />
+          </a>
+          <a href="https://www.glassfactory.info/" target="_blank" rel="noopener noreferrer">
+            <img src="/images/flogo2.png" alt="Glass Factory Logo" className="h-12 md:h-16 object-contain transition-all hover:scale-105" />
+          </a>
+          <a href="https://taurismedia.com/" target="_blank" rel="noopener noreferrer">
+            <img src="/images/flogo3.png" alt="Tauris Media Logo" className="h-12 md:h-16 object-contain transition-all hover:scale-105" />
+          </a>
+        </div>
+      </section>
+
       {/* Demo Videos */}
-      <section className="mb-20">
-        <h2 className="text-2xl font-bold mb-8 uppercase tracking-widest text-gray-500 text-center">Demos</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <section className="mb-10">
+        <h2 className="text-xl font-bold mb-4 uppercase tracking-widest text-gray-500 text-center">Demos</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <div className="aspect-video bg-gray-100 border-2 border-neu-black flex items-center justify-center relative overflow-hidden shadow-neu">
              <video controls autoPlay loop muted playsInline preload="auto" className="w-full h-full object-cover z-10">
                 <source src="/videos/taurismedia.webm" type="video/webm" />
@@ -101,8 +122,8 @@ const Freelance = () => {
       </section>
 
       {/* Services List */}
-      <section className="mb-20">
-        <h2 className="text-2xl font-bold mb-8 uppercase tracking-widest text-gray-500 text-center">What I Do</h2>
+      <section className="mb-10">
+        <h2 className="text-xl font-bold mb-4 uppercase tracking-widest text-gray-500 text-center">What I Do</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {[
             { title: 'Web Applications', desc: 'Custom, scalable web platforms.' },
@@ -120,25 +141,9 @@ const Freelance = () => {
         </div>
       </section>
 
-      {/* Clients Worked With */}
-      <section className="mb-20">
-        <h2 className="text-2xl font-bold mb-8 uppercase tracking-widest text-gray-500 text-center">Clients</h2>
-        <div className="bg-white border-2 border-neu-black p-12 shadow-neu flex flex-wrap justify-center items-center gap-12">
-          <a href="https://www.pbnifc.com/" target="_blank" rel="noopener noreferrer">
-            <img src="/images/flogo1.png" alt="PBN IFC Logo" className="h-16 md:h-20 object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" />
-          </a>
-          <a href="https://www.glassfactory.info/" target="_blank" rel="noopener noreferrer">
-            <img src="/images/flogo2.png" alt="Glass Factory Logo" className="h-16 md:h-20 object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" />
-          </a>
-          <a href="https://taurismedia.com/" target="_blank" rel="noopener noreferrer">
-            <img src="/images/flogo3.png" alt="Tauris Media Logo" className="h-16 md:h-20 object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" />
-          </a>
-        </div>
-      </section>
-
       {/* Quotation & Inquiry Section */}
       <section className="scroll-mt-24">
-        <h2 className="text-3xl font-black mb-12 uppercase tracking-tight text-center">
+        <h2 className="text-2xl font-bold mb-6 uppercase tracking-widest text-gray-500 text-center">
           Get a Quote
         </h2>
         
