@@ -93,20 +93,14 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-6 font-bold text-lg uppercase">
-            <button onClick={() => handleNavClick('about')} className="hover:-translate-y-1 hover:shadow-neu transition-all bg-neu-white px-3 py-1 border-4 border-transparent hover:border-neu-black">
-              About
-            </button>
-            <button onClick={() => handleNavClick('experience')} className="hover:-translate-y-1 hover:shadow-neu transition-all bg-neu-white px-3 py-1 border-4 border-transparent hover:border-neu-black">
-              Experience
-            </button>
-            <button onClick={() => handleNavClick('projects')} className="hover:-translate-y-1 hover:shadow-neu transition-all bg-neu-white px-3 py-1 border-4 border-transparent hover:border-neu-black">
-              Projects
-            </button>
-            <Link to="/freelance" className="hover:-translate-y-1 hover:shadow-neu transition-all bg-neu-blue text-white px-3 py-1 border-4 border-neu-black shadow-neu">
+            <Link to="/" className="hover:-translate-y-1 hover:shadow-neu transition-all bg-neu-blue text-white px-3 py-1 border-4 border-neu-black shadow-neu">
               Freelance
             </Link>
+            <Link to="/developer" className="hover:-translate-y-1 hover:shadow-neu transition-all bg-neu-yellow text-neu-black px-3 py-1 border-4 border-neu-black shadow-neu">
+              Know the developer
+            </Link>
             <Link to="/contact" className="hover:-translate-y-1 hover:shadow-neu transition-all bg-neu-brown text-white px-3 py-1 border-4 border-neu-black shadow-neu">
-              Contact
+              Contact Me
             </Link>
             
             {/* Audio Toggle */}
@@ -139,11 +133,9 @@ const Navbar = () => {
         {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="md:hidden absolute top-20 left-0 right-0 bg-neu-white border-b-4 border-neu-black shadow-neu flex flex-col p-4 space-y-4 font-bold text-xl uppercase z-40">
-            <button onClick={() => handleNavClick('about')} className="text-left w-full border-b-2 border-neu-black pb-2">About</button>
-            <button onClick={() => handleNavClick('experience')} className="text-left w-full border-b-2 border-neu-black pb-2">Experience</button>
-            <button onClick={() => handleNavClick('projects')} className="text-left w-full border-b-2 border-neu-black pb-2">Projects</button>
-            <Link to="/freelance" onClick={() => setIsMenuOpen(false)} className="bg-neu-blue text-white border-4 border-neu-black p-2 text-center shadow-neu">Freelance</Link>
-            <Link to="/contact" onClick={() => setIsMenuOpen(false)} className="bg-neu-brown text-white border-4 border-neu-black p-2 text-center shadow-neu">Contact</Link>
+            <Link to="/" onClick={() => setIsMenuOpen(false)} className="bg-neu-blue text-white border-4 border-neu-black p-2 text-center shadow-neu">Freelance</Link>
+            <Link to="/developer" onClick={() => setIsMenuOpen(false)} className="bg-neu-yellow text-neu-black border-4 border-neu-black p-2 text-center shadow-neu">Know the developer</Link>
+            <Link to="/contact" onClick={() => setIsMenuOpen(false)} className="bg-neu-brown text-white border-4 border-neu-black p-2 text-center shadow-neu">Contact Me</Link>
           </div>
         )}
       </div>

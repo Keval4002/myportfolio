@@ -16,10 +16,13 @@ const About = () => {
           </div>
           
           <div className="flex flex-wrap gap-4 mt-2">
+             <a href="/docs/Keval_Ambani_Resume1.pdf" target="_blank" rel="noopener noreferrer" className="bg-neu-brown text-white border-2 border-neu-black shadow-neu hover:shadow-neu-hover hover:-translate-y-1 transition-all px-6 py-2.5 font-bold uppercase text-sm md:text-base cursor-pointer">
+                Resume
+             </a>
              <a href="#projects" className="bg-neu-yellow text-neu-black border-2 border-neu-black shadow-neu hover:shadow-neu-hover hover:-translate-y-1 transition-all px-6 py-2.5 font-bold uppercase text-sm md:text-base cursor-pointer">
                 View Work
              </a>
-             <Link to="/freelance" className="bg-neu-blue text-white border-2 border-neu-black shadow-neu hover:shadow-neu-hover hover:-translate-y-1 transition-all px-6 py-2.5 font-bold uppercase text-sm md:text-base cursor-pointer">
+             <Link to="/" className="bg-neu-blue text-white border-2 border-neu-black shadow-neu hover:shadow-neu-hover hover:-translate-y-1 transition-all px-6 py-2.5 font-bold uppercase text-sm md:text-base cursor-pointer">
                 Freelance
              </Link>
              <Link to="/contact" className="bg-neu-black text-white border-2 border-neu-black shadow-neu hover:shadow-neu-hover hover:-translate-y-1 transition-all px-6 py-2.5 font-bold uppercase text-sm md:text-base cursor-pointer">

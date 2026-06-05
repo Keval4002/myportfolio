@@ -1,4 +1,4 @@
-import { FaEnvelope, FaLinkedin, FaGithub, FaTwitter } from 'react-icons/fa'
+import { FaEnvelope, FaLinkedin, FaGithub, FaTwitter, FaFilePdf } from 'react-icons/fa'
 
 const ContactPage = () => {
   return (
@@ -44,6 +44,14 @@ const ContactPage = () => {
             <p className="font-bold font-roboto">Thoughts & drops</p>
           </div>
           <FaTwitter className="text-5xl group-hover:scale-110 transition-transform" />
+        </a>
+
+        <a href="/docs/Keval_Ambani_Resume1.pdf" target="_blank" rel="noreferrer" className="sm:col-span-2 bg-neu-white border-4 border-neu-black p-8 shadow-neu hover:shadow-neu-hover hover:-translate-y-1 transition-all group flex items-center justify-between">
+          <div>
+            <h3 className="text-3xl font-black uppercase mb-2">Resume</h3>
+            <p className="font-bold font-roboto">Download / View My Resume</p>
+          </div>
+          <FaFilePdf className="text-5xl text-neu-brown group-hover:scale-110 transition-transform" />
         </a>
       </div>
     </main>
