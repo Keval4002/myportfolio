@@ -17,4 +17,4 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-Sitemap: https://kevalambani-portfolio92.vercel.app/sitemap.xml
+Sitemap: https://kambanidev.vercel.app/sitemap.xml
