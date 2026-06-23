@@ -141,6 +141,118 @@ const Freelance = () => {
         </div>
       </section>
 
+      {/* My Work Section */}
+      <section className="mb-16">
+        <h2 className="text-xl font-bold mb-8 uppercase tracking-widest text-gray-500 text-center">My Work</h2>
+        <div className="flex flex-col gap-8 max-w-4xl mx-auto">
+          {/* Punjabi By Nature IFC */}
+          <div className="bg-white border-4 border-neu-black p-8 shadow-neu hover:-translate-y-1 hover:shadow-neu-hover transition-all">
+            <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-6 border-b-2 border-neu-black pb-4">
+              <div>
+                <h3 className="text-2xl font-black uppercase">Punjabi By Nature IFC</h3>
+                <p className="text-sm font-bold text-gray-500 uppercase tracking-wider font-roboto mt-1">
+                  A restaurant website that helps customers find the menu and book a table
+                </p>
+              </div>
+              <a href="https://www.pbnifc.com/" target="_blank" rel="noopener noreferrer" className="bg-neu-yellow text-neu-black border-2 border-neu-black px-4 py-1.5 font-bold uppercase text-xs shadow-neu hover:shadow-neu-hover hover:-translate-y-0.5 transition-all text-center self-start sm:self-auto">
+                Live Site
+              </a>
+            </div>
+            
+            <p className="text-base font-roboto leading-relaxed text-gray-800 mb-6">
+              Punjabi By Nature IFC is a Punjabi & Mughlai restaurant in Gurgaon. I designed and built their website so that anyone visiting can quickly see beautiful photos of the food and restaurant, look at the full menu, and book a table — all without picking up the phone. I also connected the site to WhatsApp and Instagram, so guests can message the restaurant directly in one click.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 border-t border-gray-200">
+              <div>
+                <h4 className="text-xs font-black uppercase text-gray-500 mb-3 tracking-widest">What I Did:</h4>
+                <ul className="list-disc pl-5 space-y-1.5 text-sm font-roboto font-bold text-gray-700">
+                  <li>Designed how the website looks and feels — clean, simple, and easy to use on a phone</li>
+                  <li>Built the menu page and the table-booking page from scratch</li>
+                  <li>Set up one-click WhatsApp, calling, and Instagram links for the restaurant</li>
+                </ul>
+              </div>
+              <div className="bg-gray-50 border border-neu-black p-4">
+                <h4 className="text-xs font-black uppercase text-gray-500 mb-2 tracking-widest">Why it matters:</h4>
+                <p className="text-sm font-roboto leading-relaxed text-gray-800">
+                  Customers can decide what to eat and book a table in under a minute, which means fewer phone calls for the restaurant and a more professional first impression.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Tauris Media */}
+          <div className="bg-white border-4 border-neu-black p-8 shadow-neu hover:-translate-y-1 hover:shadow-neu-hover transition-all">
+            <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-6 border-b-2 border-neu-black pb-4">
+              <div>
+                <h3 className="text-2xl font-black uppercase">Tauris Media</h3>
+                <p className="text-sm font-bold text-gray-500 uppercase tracking-wider font-roboto mt-1">
+                  A brand look and website for a marketing agency
+                </p>
+              </div>
+              <a href="https://taurismedia.com/" target="_blank" rel="noopener noreferrer" className="bg-neu-blue text-white border-2 border-neu-black px-4 py-1.5 font-bold uppercase text-xs shadow-neu hover:shadow-neu-hover hover:-translate-y-0.5 transition-all text-center self-start sm:self-auto">
+                Live Site
+              </a>
+            </div>
+            
+            <p className="text-base font-roboto leading-relaxed text-gray-800 mb-6">
+              Tauris Media is a marketing agency in Kolkata that helps other businesses grow online. My job was to give them a strong, confident brand — including their bull mascot logo — and then build a website that shows off what they do and convinces new clients to work with them.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 border-t border-gray-200">
+              <div>
+                <h4 className="text-xs font-black uppercase text-gray-500 mb-3 tracking-widest">What I Did:</h4>
+                <ul className="list-disc pl-5 space-y-1.5 text-sm font-roboto font-bold text-gray-700">
+                  <li>Created their brand identity, including their logo and overall look</li>
+                  <li>Designed and built their website from the ground up</li>
+                </ul>
+              </div>
+              <div className="bg-gray-50 border border-neu-black p-4">
+                <h4 className="text-xs font-black uppercase text-gray-500 mb-2 tracking-widest">Why it matters:</h4>
+                <p className="text-sm font-roboto leading-relaxed text-gray-800">
+                  A marketing agency's own website is its first sales pitch — it needed to look as polished and convincing as the brands it promises to build for its clients.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Glass Factory */}
+          <div className="bg-white border-4 border-neu-black p-8 shadow-neu hover:-translate-y-1 hover:shadow-neu-hover transition-all">
+            <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-6 border-b-2 border-neu-black pb-4">
+              <div>
+                <h3 className="text-2xl font-black uppercase">Glass Factory</h3>
+                <p className="text-sm font-bold text-gray-500 uppercase tracking-wider font-roboto mt-1">
+                  A website that connects fashion brands with factories
+                </p>
+              </div>
+              <a href="https://www.glassfactory.info/" target="_blank" rel="noopener noreferrer" className="bg-neu-brown text-white border-2 border-neu-black px-4 py-1.5 font-bold uppercase text-xs shadow-neu hover:shadow-neu-hover hover:-translate-y-0.5 transition-all text-center self-start sm:self-auto">
+                Live Site
+              </a>
+            </div>
+            
+            <p className="text-base font-roboto leading-relaxed text-gray-800 mb-6">
+              Glass Factory is a platform that helps fashion brands find trustworthy factories to manufacture their clothing, anywhere in the world. It's been featured in Vogue Business, WIRED, and Esquire for making the usually secretive world of clothing manufacturing easier to understand. I worked on the parts of the website that let brands search for factories and manufacturers sign up to be listed.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 border-t border-gray-200">
+              <div>
+                <h4 className="text-xs font-black uppercase text-gray-500 mb-3 tracking-widest">What I Did:</h4>
+                <ul className="list-disc pl-5 space-y-1.5 text-sm font-roboto font-bold text-gray-700">
+                  <li>Designed and built the factory search tool that brands use to find a match</li>
+                  <li>Built the sign-up process for factories wanting to join the platform</li>
+                </ul>
+              </div>
+              <div className="bg-gray-50 border border-neu-black p-4">
+                <h4 className="text-xs font-black uppercase text-gray-500 mb-2 tracking-widest">Why it matters:</h4>
+                <p className="text-sm font-roboto leading-relaxed text-gray-800">
+                  It turns a slow, word-of-mouth process — finding a reliable factory — into something a brand can do online in minutes.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Quotation & Inquiry Section */}
       <section className="scroll-mt-24">
         <h2 className="text-2xl font-bold mb-6 uppercase tracking-widest text-gray-500 text-center">
